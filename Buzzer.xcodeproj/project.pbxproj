@@ -15,6 +15,10 @@
 		9476C6571CDACB43008D6391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9476C6551CDACB43008D6391 /* LaunchScreen.storyboard */; };
 		9476C6621CDACB43008D6391 /* BuzzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C6611CDACB43008D6391 /* BuzzerTests.swift */; };
 		9476C66D1CDACB43008D6391 /* BuzzerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C66C1CDACB43008D6391 /* BuzzerUITests.swift */; };
+		9476C67E1CDAE4F3008D6391 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C67D1CDAE4F3008D6391 /* Game.swift */; };
+		9476C6801CDAE502008D6391 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C67F1CDAE502008D6391 /* Player.swift */; };
+		9476C6821CDAE511008D6391 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C6811CDAE511008D6391 /* Question.swift */; };
+		9476C6841CDAE51C008D6391 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C6831CDAE51C008D6391 /* Answer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		9476C6681CDACB43008D6391 /* BuzzerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuzzerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9476C66C1CDACB43008D6391 /* BuzzerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzerUITests.swift; sourceTree = "<group>"; };
 		9476C66E1CDACB43008D6391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9476C67D1CDAE4F3008D6391 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9476C67F1CDAE502008D6391 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		9476C6811CDAE511008D6391 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		9476C6831CDAE51C008D6391 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,9 @@
 		9476C6481CDACB43008D6391 /* Buzzer */ = {
 			isa = PBXGroup;
 			children = (
+				9476C67C1CDAE441008D6391 /* Controller */,
+				9476C67A1CDAE426008D6391 /* Model */,
+				9476C67B1CDAE434008D6391 /* View */,
 				9476C6491CDACB43008D6391 /* AppDelegate.swift */,
 				9476C64B1CDACB43008D6391 /* ViewController.swift */,
 				9476C64D1CDACB43008D6391 /* Main.storyboard */,
@@ -126,6 +137,31 @@
 				9476C66E1CDACB43008D6391 /* Info.plist */,
 			);
 			path = BuzzerUITests;
+			sourceTree = "<group>";
+		};
+		9476C67A1CDAE426008D6391 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9476C67D1CDAE4F3008D6391 /* Game.swift */,
+				9476C67F1CDAE502008D6391 /* Player.swift */,
+				9476C6811CDAE511008D6391 /* Question.swift */,
+				9476C6831CDAE51C008D6391 /* Answer.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9476C67B1CDAE434008D6391 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9476C67C1CDAE441008D6391 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +298,10 @@
 				9476C6521CDACB43008D6391 /* Buzzer.xcdatamodeld in Sources */,
 				9476C64C1CDACB43008D6391 /* ViewController.swift in Sources */,
 				9476C64A1CDACB43008D6391 /* AppDelegate.swift in Sources */,
+				9476C6841CDAE51C008D6391 /* Answer.swift in Sources */,
+				9476C6821CDAE511008D6391 /* Question.swift in Sources */,
+				9476C6801CDAE502008D6391 /* Player.swift in Sources */,
+				9476C67E1CDAE4F3008D6391 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
