@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class Player: NSObject {
+    var name: String = ""
+    var score: Int = 0
+    
+}
