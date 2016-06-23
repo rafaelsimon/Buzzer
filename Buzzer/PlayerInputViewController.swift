@@ -20,10 +20,10 @@ class PlayerInputViewController: UIViewController, UIGestureRecognizerDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addGestureRecognizer()
+        addTapGestureRecognizer()
     }
     
-    func addGestureRecognizer() {
+    func addTapGestureRecognizer() {
         for eachImageView: UIImageView in playerImages {
             let gestureRecognizer = UITapGestureRecognizer(target: self,
                 action: Selector("playerImageTapped:"))
