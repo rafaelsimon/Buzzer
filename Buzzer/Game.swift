@@ -40,5 +40,18 @@ class Game: NSObject {
         })
     }
     
+    func currentPlayerGotItRight() {
+        guard let currentPlayer = currentPlayer else { return }
+        if let price = currentQuestion?.price {
+            currentPlayer.score += price
+        }
+    }
+    
+    func currentPlayerGotItWrong() {
+        guard let currentPlayer = currentPlayer else { return }
+        if let price = currentQuestion?.price {
+            currentPlayer.score -= price
+        }
+    }
     
 }

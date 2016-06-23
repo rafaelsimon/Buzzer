@@ -15,8 +15,7 @@ class AnswerInputViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var questionTextView: UITextView!
     @IBOutlet weak var answerTextView: UITextView!
-    
-    
+    //@IBOutlet weak var checkAnwer: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,17 +38,17 @@ class AnswerInputViewController: UIViewController {
     }
     
     @IBAction func checkAnswer(sender: AnyObject) {
-        
+        game?.currentQuestion?.playerAnswer = answerTextView.text
+        performSegueWithIdentifier("AnswerVerificationSegue", sender: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "AnswerVerificationSegue" {
+            if let destinationViewController = segue.destinationViewController as? AnswerVerificationViewController {
+                destinationViewController.game = game
+            }
+        }
     }
-    */
 
 }

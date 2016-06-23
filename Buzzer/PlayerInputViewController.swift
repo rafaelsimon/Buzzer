@@ -8,16 +8,64 @@
 
 import UIKit
 
-class PlayerInputViewController: UIViewController {
+class PlayerInputViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+    @IBOutlet var playerImages: [UIImageView]!
     @IBOutlet weak var player1Text: UITextField!
     @IBOutlet weak var player2Text: UITextField!
     @IBOutlet weak var player3Text: UITextField!
+    
+    var selectedImageView: UIImageView?
+    let imagePicker = UIImagePickerController()
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addGestureRecognizer()
+    }
+    
+    func addGestureRecognizer() {
+        for eachImageView: UIImageView in playerImages {
+            let gestureRecognizer = UITapGestureRecognizer(target: self,
+                action: Selector("playerImageTapped:"))
+            gestureRecognizer.delegate = self
+            eachImageView.addGestureRecognizer(gestureRecognizer)
+        }
+    
+    }
+    
+    func playerImageTapped(sender: UITapGestureRecognizer) {
+        selectedImageView = sender.view as? UIImageView
+        showImagePicker()
+    }
+    
+    func showImagePicker() {
+        if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+            imagePicker.delegate = self
+            imagePicker.sourceType = .PhotoLibrary
+            imagePicker.allowsEditing = false
+        }
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    // MARK:- UIImagePickerControllerDelegate
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        print("Cancelled")
+        selectedImageView = nil
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
+        guard selectedImageView != nil else { return }
+        selectedImageView?.image = image
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK:- IBActions
+    
     @IBAction func playAction(sender: AnyObject) {
         performSegueWithIdentifier("ShowQuestionPickerSegue", sender: nil)
     }

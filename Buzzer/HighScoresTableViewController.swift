@@ -7,17 +7,35 @@
 //
 
 import UIKit
+import CoreData
 
 class HighScoresTableViewController: UITableViewController {
+    
+    var highScores: [HighScore] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.loadHighScores()
+    }
+    
+    func loadHighScores() {
+        guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate else {return}
+        // TODO : Student Enhancement: Add a sort order by score to the fetched results.
+        let fetchRequest = NSFetchRequest(entityName: "HighScore")
+        let sort = NSSortDescriptor(key: "playerScore", ascending: false)
+        let sort2 = NSSortDescriptor(key: "playerName", ascending: true)
+        fetchRequest.sortDescriptors = [sort,sort2]
+        fetchRequest.fetchLimit = 5
+        do {
+            let fetchResults = try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+            
+            if let results = fetchResults as? [HighScore] {
+                highScores = results
+                self.tableView.reloadData()
+            }
+        } catch let error {
+            print("Error loading high scores: \(error)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,16 +50,18 @@ class HighScoresTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return highScores.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HighScoreIdentifier", forIndexPath: indexPath)
-
+        guard let highScoreCell = cell as? HighScoreTableViewCell else { return cell }
         // Configure the cell...
-
-        return cell
+        let score = highScores[indexPath.row]
+        highScoreCell.playerNameLabel.text = score.playerName
+        highScoreCell.playerScoreLabel.text = score.playerScore?.stringValue
+        return highScoreCell
     }
 
     /*

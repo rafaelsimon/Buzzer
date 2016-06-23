@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		782967C51CE2A55F00693018 /* QuestionPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782967C41CE2A55F00693018 /* QuestionPickerCell.swift */; };
 		78DE9C341CED214E00936DC5 /* QuestionBuzzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9C331CED214E00936DC5 /* QuestionBuzzViewController.swift */; };
+		9403CBEC1D0F8890005C554F /* HighScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CBEB1D0F8890005C554F /* HighScoreTableViewCell.swift */; };
+		9403CBEE1D0F9BBF005C554F /* FinalResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CBED1D0F9BBF005C554F /* FinalResultsViewController.swift */; };
 		940B58791CFFC8F0004BC617 /* HighScore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940B58771CFFC8F0004BC617 /* HighScore+CoreDataProperties.swift */; };
 		940B587A1CFFC8F0004BC617 /* HighScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940B58781CFFC8F0004BC617 /* HighScore.swift */; };
 		940B587D1CFFD35A004BC617 /* AnswerVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940B587C1CFFD35A004BC617 /* AnswerVerificationViewController.swift */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		782967C41CE2A55F00693018 /* QuestionPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPickerCell.swift; sourceTree = "<group>"; };
 		78DE9C331CED214E00936DC5 /* QuestionBuzzViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBuzzViewController.swift; sourceTree = "<group>"; };
+		9403CBEB1D0F8890005C554F /* HighScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreTableViewCell.swift; sourceTree = "<group>"; };
+		9403CBED1D0F9BBF005C554F /* FinalResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalResultsViewController.swift; sourceTree = "<group>"; };
 		940B58771CFFC8F0004BC617 /* HighScore+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HighScore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		940B58781CFFC8F0004BC617 /* HighScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScore.swift; sourceTree = "<group>"; };
 		940B587C1CFFD35A004BC617 /* AnswerVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerVerificationViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				782967C41CE2A55F00693018 /* QuestionPickerCell.swift */,
+				9403CBEB1D0F8890005C554F /* HighScoreTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				94A01A691CFD268E00FCAFDB /* AnswerInputViewController.swift */,
 				940B587C1CFFD35A004BC617 /* AnswerVerificationViewController.swift */,
 				945946841D090C3500D5A5B8 /* HighScoresTableViewController.swift */,
+				9403CBED1D0F9BBF005C554F /* FinalResultsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -356,11 +362,13 @@
 				94A01A6A1CFD268E00FCAFDB /* AnswerInputViewController.swift in Sources */,
 				9476C6821CDAE511008D6391 /* Question.swift in Sources */,
 				940B58791CFFC8F0004BC617 /* HighScore+CoreDataProperties.swift in Sources */,
+				9403CBEE1D0F9BBF005C554F /* FinalResultsViewController.swift in Sources */,
 				940B587A1CFFC8F0004BC617 /* HighScore.swift in Sources */,
 				9476C6801CDAE502008D6391 /* Player.swift in Sources */,
 				94EAAB511CE1736A00C65117 /* PlayerInputViewController.swift in Sources */,
 				9476C67E1CDAE4F3008D6391 /* Game.swift in Sources */,
 				782967C51CE2A55F00693018 /* QuestionPickerCell.swift in Sources */,
+				9403CBEC1D0F8890005C554F /* HighScoreTableViewCell.swift in Sources */,
 				78DE9C341CED214E00936DC5 /* QuestionBuzzViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Buzzer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Robots-Pencils.Buzzer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnp.buzzer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -516,7 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Buzzer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Robots-Pencils.Buzzer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnp.buzzer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
